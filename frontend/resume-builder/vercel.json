@@ -1,12 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/api/:path",
-      "destination": "https://resumate-backend.up.railway.app/api/:path"
-    },
-    {
-      "source": "/api/:path/:subpath*",
-      "destination": "https://resumate-backend.up.railway.app/api/:path/:subpath*"
+      "source": "/api/:path*",
+      "destination": "https://resumate-backend.up.railway.app/api/:path*"
     },
     {
       "source": "/(.*)",

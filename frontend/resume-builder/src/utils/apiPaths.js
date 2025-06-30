@@ -1,4 +1,3 @@
-// utils/apiPaths.js
 export const BASE_URL = "https://resumate-backend.up.railway.app";
 
 export const API_PATHS = {
