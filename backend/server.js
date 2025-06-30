@@ -9,11 +9,15 @@ const resumeRoutes = require("./routes/resumeRoutes");
 const app = express();
 
 // Middleware
-app.use(cors({
-  origin: ["https://resumatemk.vercel.app"],
-  methods: ["GET", "POST", "PUT", "DELETE"],
+const corsOptions = {
+  origin: "https://resumatemk.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
-}));
+};
+
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
+
 
 // Database connection
 connectDB();
