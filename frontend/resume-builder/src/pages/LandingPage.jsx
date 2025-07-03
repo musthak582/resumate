@@ -27,7 +27,7 @@ const LandingPage = () => {
   };
 
   return (
-    <div className="w-full min-h-full bg-white">
+    <div className="w-full min-h-full bg-white relative">
       <div className="container mx-auto px-4 py-6">
         {/* header */}
         <motion.header
