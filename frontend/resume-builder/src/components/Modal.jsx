@@ -13,7 +13,7 @@ const Modal = ({
 }) => {
   if (!isOpen) return null;
   return (
-    <div className="absolute top-0 right-0 z-50 flex justify-center items-center w-full h-full bg-black/40">
+    <div className="fixed top-6 z-50 flex justify-center items-center w-full h-full bg-black/40">
       {/* Modal Content */}
       <div
         className={`relative flex flex-col bg-white shadow-lg rounded-lg overflow-hidden`}>
