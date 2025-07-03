@@ -7,7 +7,7 @@ import Modal from '../components/Modal';
 import { useContext } from 'react';
 import { UserContext } from '../context/userContext';
 import ProfileInfoCard from '../components/Cards/ProfileInfoCard';
-import { motion } from 'framer-motion';
+import { motion , AnimatePresence} from 'framer-motion';
 import { fadeIn, staggerContainer, textVariant, zoomIn } from '../utils/motion';
 import { FiFileText, FiEdit, FiLayout, FiDownload, FiArrowRight } from 'react-icons/fi';
 
@@ -250,7 +250,7 @@ const LandingPage = () => {
         </div>
       </motion.footer>
 
-      <Modal
+      {/* <Modal
         isOpen={openAuthModal}
         onClose={() => {
           setOpenAuthModal(false);
@@ -262,7 +262,34 @@ const LandingPage = () => {
           {currentPage === 'login' && <Login setCurrentPage={setCurrentPage} />}
           {currentPage === 'signup' && <SignUp setCurrentPage={setCurrentPage} />}
         </div>
-      </Modal>
+      </Modal> */}
+      {/* Auth Modal */}
+      <AnimatePresence>
+        {openAuthModal && (
+          <Modal
+            isOpen={openAuthModal}
+            onClose={() => {
+              setOpenAuthModal(false);
+              setCurrentPage('login');
+            }}
+            hideHeader
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.2 }}
+            >
+              {currentPage === "login" && (
+                <Login setCurrentPage={setCurrentPage} />
+              )}
+              {currentPage === "signup" && (
+                <SignUp setCurrentPage={setCurrentPage} />
+              )}
+            </motion.div>
+          </Modal>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
