@@ -1,4 +1,4 @@
-export const BASE_URL = "https://resumate-backend.up.railway.app";
+export const BASE_URL = "https://resumatemk.up.railway.app";
 
 export const API_PATHS = {
   AUTH: {
